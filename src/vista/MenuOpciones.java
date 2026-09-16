@@ -62,17 +62,17 @@ public class MenuOpciones extends JFrame {
 		contentPane.add(btnAdd);
 		
 		JButton btnSave = new JButton("Guardar mensajes");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSave, 10, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnSave, 129, SpringLayout.EAST, btnLoad);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnSave, 42, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnSave, -10, SpringLayout.EAST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnSave, 0, SpringLayout.NORTH, btnLoad);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnSave, 32, SpringLayout.NORTH, btnLoad);
 		contentPane.add(btnSave);
 		
-		JButton btnPrint = new JButton("New button");
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnPrint, 49, SpringLayout.SOUTH, btnSave);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnPrint, 0, SpringLayout.WEST, btnSave);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnPrint, -32, SpringLayout.SOUTH, btnAdd);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnPrint, -15, SpringLayout.EAST, contentPane);
+		JButton btnPrint = new JButton("Imprimir mensajes");
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnSave, 0, SpringLayout.WEST, btnPrint);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnSave, 0, SpringLayout.EAST, btnPrint);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnPrint, 123, SpringLayout.EAST, btnAdd);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnPrint, -5, SpringLayout.EAST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnPrint, 0, SpringLayout.NORTH, btnAdd);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnPrint, 32, SpringLayout.NORTH, btnAdd);
 		contentPane.add(btnPrint);
 		
 		JButton btnExit = new JButton("Salir");
