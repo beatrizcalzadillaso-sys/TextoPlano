@@ -9,14 +9,15 @@ import javax.swing.SpringLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import datos.DatosDesplegables;
 
 public class MenuAdd extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
@@ -86,12 +87,6 @@ public class MenuAdd extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		sl_contentPane.putConstraint(SpringLayout.NORTH, textField_1, 0, SpringLayout.NORTH, lblTime);
-		sl_contentPane.putConstraint(SpringLayout.EAST, textField_1, 0, SpringLayout.EAST, textField);
-		textField_1.setColumns(10);
-		contentPane.add(textField_1);
-		
 		textField_2 = new JTextField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, textField_2, 0, SpringLayout.NORTH, lblFrom);
 		sl_contentPane.putConstraint(SpringLayout.EAST, textField_2, 0, SpringLayout.EAST, textField);
@@ -122,6 +117,7 @@ public class MenuAdd extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.NORTH, cbMonth, -1, SpringLayout.NORTH, textField);
 		sl_contentPane.putConstraint(SpringLayout.WEST, cbMonth, 41, SpringLayout.EAST, textField);
 		sl_contentPane.putConstraint(SpringLayout.EAST, cbMonth, 170, SpringLayout.EAST, textField);
+		cbMonth.setModel(new DefaultComboBoxModel<>(DatosDesplegables.Month));
 		contentPane.add(cbMonth);
 		
 		JComboBox cbDay = new JComboBox();
@@ -139,6 +135,24 @@ public class MenuAdd extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnCancel, 0, SpringLayout.SOUTH, btnOK);
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnCancel, -10, SpringLayout.EAST, contentPane);
 		contentPane.add(btnCancel);
+		
+		JComboBox cbHora = new JComboBox();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, cbHora, -4, SpringLayout.NORTH, lblTime);
+		sl_contentPane.putConstraint(SpringLayout.WEST, cbHora, 0, SpringLayout.WEST, textField);
+		sl_contentPane.putConstraint(SpringLayout.EAST, cbHora, 130, SpringLayout.EAST, lblTime);
+		contentPane.add(cbHora);
+		
+		JLabel lblHSep = new JLabel(":");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, lblHSep, 0, SpringLayout.NORTH, lblTime);
+		sl_contentPane.putConstraint(SpringLayout.WEST, lblHSep, 6, SpringLayout.EAST, cbHora);
+		sl_contentPane.putConstraint(SpringLayout.EAST, lblHSep, -20, SpringLayout.EAST, textField);
+		contentPane.add(lblHSep);
+		
+		JComboBox cbMinutos = new JComboBox();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, cbMinutos, -4, SpringLayout.NORTH, lblTime);
+		sl_contentPane.putConstraint(SpringLayout.WEST, cbMinutos, 23, SpringLayout.EAST, lblHSep);
+		sl_contentPane.putConstraint(SpringLayout.EAST, cbMinutos, 72, SpringLayout.EAST, lblHSep);
+		contentPane.add(cbMinutos);
 
 	}
 }
